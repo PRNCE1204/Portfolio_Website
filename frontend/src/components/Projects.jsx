@@ -68,7 +68,7 @@ const Projects = () => {
   return (
     <section 
       id="projects"
-      className="bg-zinc-50 py-32 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t-8 border-black bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:40px_40px]"
+      className="bg-zinc-50 py-32 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t-8 border-black bg-[linear-gradient(to_right,#00000025_1px,transparent_1px),linear-gradient(to_bottom,#00000025_1px,transparent_1px)] bg-[size:40px_40px]"
     >
       {/* Background Accents */}
       <div className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-[#ff2a2a]/3 blur-[120px] pointer-events-none" />
