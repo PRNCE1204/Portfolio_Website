@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import primedineMockup from '../assets/FoodZone.png';
 import voiceaiMockup from '../assets/logo.png';
 
@@ -8,7 +7,7 @@ const Projects = () => {
 
   const primedineTabs = {
     customer: {
-      title: "CUSTOMER_UI",
+      title: "Customer View",
       bullets: [
         "Browse the menu, add items to a cart, and select a table before ordering.",
         "Live order tracker (via Socket.io) updates cooking and service states in real-time.",
@@ -18,7 +17,7 @@ const Projects = () => {
       ]
     },
     kitchen: {
-      title: "KITCHEN_SYS",
+      title: "Kitchen View",
       bullets: [
         "Real-time kitchen order ticket dashboard displaying item counts, prep priority, and target tables.",
         "Single-click order state updates (preparing, cooked) synced instantly to the customer's tracker.",
@@ -26,7 +25,7 @@ const Projects = () => {
       ]
     },
     owner: {
-      title: "ADMIN_CNTL",
+      title: "Owner/Admin View",
       bullets: [
         "Interactive floor map with colored table status indicating occupancy, bill statuses, and pending cleanings.",
         "Menu editor, price configurator, and database manager for catalog updates.",
@@ -40,10 +39,8 @@ const Projects = () => {
     voiceai: {
       id: "voiceai",
       title: "Voice AI Agent",
-      codename: "CORE_VOICE_v1.0",
       subtitle: "SaaS Platform for Embeddable Voice Assistants",
-      duration: "ONGOING",
-      status: "STABLE",
+      duration: "Ongoing",
       techStack: ["React 19", "Node.js", "Express.js", "Socket.io", "MongoDB", "Gemini API", "Voyage AI", "Razorpay API"],
       mockup: voiceaiMockup,
       github: "https://github.com/PRNCE1204/VoiceAiAgent",
@@ -59,10 +56,8 @@ const Projects = () => {
     primedine: {
       id: "primedine",
       title: "PrimeDine Platform",
-      codename: "REST_SYS_v2.4",
       subtitle: "Restaurant Ordering & Table Management System",
       duration: "2024",
-      status: "ONLINE",
       techStack: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Socket.io"],
       mockup: primedineMockup,
       github: "https://github.com/PRNCE1204/PrimeDine",
@@ -73,120 +68,74 @@ const Projects = () => {
   return (
     <section 
       id="projects"
-      className="bg-[#050508] py-32 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t-4 border-[#ff2a2a]"
+      className="bg-zinc-50 py-32 px-6 md:px-12 w-full relative overflow-hidden font-sans border-t-8 border-black bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:40px_40px]"
     >
-      {/* Custom Scopes CSS for Cyber Dashboard */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .cyber-grid {
-          background-image: 
-            linear-gradient(rgba(255, 42, 42, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 42, 42, 0.04) 1px, transparent 1px);
-          background-size: 30px 30px;
-        }
-        @keyframes scanline-anim {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(220px); }
-        }
-        .scan-line {
-          animation: scanline-anim 3.5s linear infinite;
-        }
-      `}} />
-
-      {/* Cybernetic Grid & Neon Ambient Accents */}
-      <div className="absolute inset-0 cyber-grid pointer-events-none" />
-      <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full bg-[#ff2a2a]/5 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full bg-[#ff2a2a]/5 blur-[130px] pointer-events-none" />
+      {/* Background Accents */}
+      <div className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-[#ff2a2a]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-[#ff2a2a]/3 blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* Robotic Section Header */}
-        <div data-aos="fade-up" className="flex flex-col items-center mb-20">
-          <div className="font-mono text-xs text-[#ff2a2a] tracking-[0.25em] uppercase mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#ff2a2a] animate-pulse" />
-            SYS.STATUS // ACTIVE_PORTFOLIO_DB
+        {/* Section Header */}
+        <div data-aos="fade-up" className="text-center flex flex-col items-center mb-20">
+          <div className="inline-block border-2 border-[#ff2a2a] rounded-full px-6 py-2 text-xs md:text-sm text-[#ff2a2a] font-black shadow-sm bg-[#ff2a2a]/5 uppercase tracking-widest font-heading mb-6">
+            Featured Works
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-heading font-black text-white uppercase tracking-widest text-center relative">
-            <span className="absolute -inset-1 bg-gradient-to-r from-red-600 to-amber-600 opacity-20 blur-lg" />
-            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400">
-              Projects
-            </span>
+          <h2 
+            className="text-4xl md:text-6xl font-heading font-black text-black uppercase tracking-widest leading-none mb-4"
+            style={{ textShadow: '1px 1px 0px #fff, 2px 2px 0px #fff, 3px 3px 0px #fff, 4px 4px 0px #ff2a2a, 5px 5px 0px #000' }}
+          >
+            Projects
           </h2>
-          <div className="w-24 h-[2px] bg-gradient-to-r from-[#ff2a2a] to-transparent mt-4" />
         </div>
 
-        {/* Side-by-Side Multi-Console Grid */}
+        {/* Side-by-Side Grid Layout */}
         <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full">
           
-          {/* Card 1: Voice AI Console */}
-          <div className="w-full bg-[#0a0a0f]/95 border-2 border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col justify-between hover:border-[#ff2a2a]/60 hover:shadow-[0_0_30px_rgba(255,42,42,0.15)] transition-all duration-500">
-            {/* HUD Panel Corners */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#ff2a2a]" />
-            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#ff2a2a]" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff2a2a]" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#ff2a2a]" />
-
+          {/* Card 1: Voice AI */}
+          <div className="bg-white border-4 border-black rounded-[2rem] p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300">
             <div>
-              {/* Top Screen Bar */}
-              <div className="flex justify-between items-center border-b border-zinc-800/80 pb-4 mb-6 font-mono text-[10px] text-zinc-500">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] animate-pulse" />
-                  <span>SYS_DISP: MOD_01</span>
-                </div>
-                <div>ID: {projectsList.voiceai.codename}</div>
-              </div>
-
-              {/* Mockup Frame with scanning laser */}
-              <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-zinc-800/80 bg-[#060609] flex items-center justify-center p-4 group mb-6">
-                {/* Corner Crosshairs */}
-                <div className="absolute top-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute bottom-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute bottom-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                
-                {/* Laser Scanner */}
-                <div className="absolute inset-x-0 h-[2px] bg-[#ff2a2a]/60 shadow-[0_0_10px_#ff2a2a] scan-line pointer-events-none z-10" />
-
+              {/* Mockup Frame */}
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border-2 border-[#ff2a2a] bg-white flex items-center justify-center p-6 shadow-md mb-6">
                 <img 
                   src={projectsList.voiceai.mockup} 
                   alt={projectsList.voiceai.title} 
-                  className="select-none transition-all duration-500 max-h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,42,42,0.1)] group-hover:scale-105 max-w-[45%]"
+                  className="select-none transition-transform duration-500 max-h-full max-w-[60%] object-contain"
                 />
               </div>
 
-              {/* Info Header */}
+              {/* Title & Subtitle */}
               <div className="mb-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl md:text-2xl font-heading font-black text-white leading-none">
+                  <h3 className="text-2xl font-heading font-black text-black leading-none">
                     {projectsList.voiceai.title}
                   </h3>
-                  <span className="font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-[#ff2a2a]/30 text-[#ff2a2a] bg-[#ff2a2a]/5">
+                  <span className="text-xs font-black uppercase tracking-wider text-zinc-500">
                     {projectsList.voiceai.duration}
                   </span>
                 </div>
-                <p className="font-mono text-[10px] text-zinc-500 tracking-wider mb-4">
+                <p className="text-sm font-bold text-zinc-500 mb-4">
                   {projectsList.voiceai.subtitle}
                 </p>
 
                 {/* Tech Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-5">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {projectsList.voiceai.techStack.map((tech, idx) => (
                     <span 
                       key={idx} 
-                      className="px-2 py-0.5 rounded bg-[#ff2a2a]/5 border border-[#ff2a2a]/10 text-zinc-300 font-mono text-[9px] uppercase tracking-wider"
+                      className="px-3 py-1 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-700 text-[10px] font-black uppercase tracking-wider"
                     >
-                      [{tech}]
+                      {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Project Specs */}
-                <ul className="space-y-3 text-zinc-300 text-xs leading-relaxed font-sans">
+                {/* Bullet details */}
+                <ul className="space-y-3.5 text-zinc-700 text-sm leading-relaxed font-medium">
                   {projectsList.voiceai.bullets.map((bullet, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
-                        {`>`}
-                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] mt-2 flex-shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -195,104 +144,80 @@ const Projects = () => {
             </div>
 
             {/* Actions / Buttons */}
-            <div className="flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-6 mt-6">
+            <div className="flex flex-wrap items-center gap-3.5 border-t border-zinc-100 pt-6 mt-6">
               <a
                 href={projectsList.voiceai.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-transparent hover:bg-white text-zinc-300 hover:text-black border border-zinc-700 hover:border-white transition-all duration-300"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider bg-white hover:bg-black text-black hover:text-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all duration-350"
               >
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
                 </svg>
-                GIT_CODE
+                GitHub Code
               </a>
               <a
                 href={projectsList.voiceai.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-[#ff2a2a] hover:bg-white text-white hover:text-black border border-[#ff2a2a] hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,42,42,0.25)]"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider bg-[#ff2a2a] hover:bg-black text-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all duration-350"
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                LIVE_SYS
+                Live Demo
               </a>
             </div>
           </div>
 
-          {/* Card 2: PrimeDine Console */}
-          <div className="w-full bg-[#0a0a0f]/95 border-2 border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col justify-between hover:border-[#ff2a2a]/60 hover:shadow-[0_0_30px_rgba(255,42,42,0.15)] transition-all duration-500">
-            {/* HUD Panel Corners */}
-            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#ff2a2a]" />
-            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#ff2a2a]" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff2a2a]" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#ff2a2a]" />
-
+          {/* Card 2: PrimeDine */}
+          <div className="bg-white border-4 border-black rounded-[2rem] p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300">
             <div>
-              {/* Top Screen Bar */}
-              <div className="flex justify-between items-center border-b border-zinc-800/80 pb-4 mb-6 font-mono text-[10px] text-zinc-500">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] animate-pulse" />
-                  <span>SYS_DISP: MOD_02</span>
-                </div>
-                <div>ID: {projectsList.primedine.codename}</div>
-              </div>
-
-              {/* Mockup Frame with scanning laser */}
-              <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-zinc-800/80 bg-[#060609] flex items-center justify-center p-4 group mb-6">
-                {/* Corner Crosshairs */}
-                <div className="absolute top-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute bottom-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                <div className="absolute bottom-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
-                
-                {/* Laser Scanner */}
-                <div className="absolute inset-x-0 h-[2px] bg-[#ff2a2a]/60 shadow-[0_0_10px_#ff2a2a] scan-line pointer-events-none z-10" />
-
+              {/* Mockup Frame */}
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border-2 border-[#ff2a2a] bg-white flex items-center justify-center p-6 shadow-md mb-6">
                 <img 
                   src={projectsList.primedine.mockup} 
                   alt={projectsList.primedine.title} 
-                  className="select-none transition-all duration-500 max-h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,42,42,0.1)] group-hover:scale-105 max-w-[60%]"
+                  className="select-none transition-transform duration-500 max-h-full max-w-[70%] object-contain"
                 />
               </div>
 
-              {/* Info Header */}
+              {/* Title & Subtitle */}
               <div className="mb-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl md:text-2xl font-heading font-black text-white leading-none">
+                  <h3 className="text-2xl font-heading font-black text-black leading-none">
                     {projectsList.primedine.title}
                   </h3>
-                  <span className="font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-zinc-800 text-zinc-500">
+                  <span className="text-xs font-black uppercase tracking-wider text-zinc-500">
                     {projectsList.primedine.duration}
                   </span>
                 </div>
-                <p className="font-mono text-[10px] text-zinc-500 tracking-wider mb-4">
+                <p className="text-sm font-bold text-zinc-500 mb-4">
                   {projectsList.primedine.subtitle}
                 </p>
 
                 {/* Tech Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-5">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {projectsList.primedine.techStack.map((tech, idx) => (
                     <span 
                       key={idx} 
-                      className="px-2 py-0.5 rounded bg-[#ff2a2a]/5 border border-[#ff2a2a]/10 text-zinc-300 font-mono text-[9px] uppercase tracking-wider"
+                      className="px-3 py-1 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-700 text-[10px] font-black uppercase tracking-wider"
                     >
-                      [{tech}]
+                      {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Interactive Sub-System view selector switcher */}
-                <div className="flex flex-wrap gap-1.5 border-b border-zinc-800/80 pb-3 mb-4">
+                {/* Tab Switchers */}
+                <div className="flex flex-wrap gap-2 border-b border-zinc-200 pb-3 mb-5">
                   {Object.keys(primedineTabs).map((tabKey) => (
                     <button
                       key={tabKey}
                       onClick={() => setActivePrimeDineTab(tabKey)}
-                      className={`px-2.5 py-1 rounded font-mono text-[9px] uppercase tracking-widest transition-all duration-300 ${
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
                         activePrimeDineTab === tabKey
-                          ? 'bg-[#ff2a2a] text-white shadow-[0_0_8px_rgba(255,42,42,0.3)] border border-[#ff2a2a]'
-                          : 'bg-zinc-950 text-zinc-500 hover:text-zinc-300 border border-zinc-900'
+                          ? 'bg-[#ff2a2a] text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] border-2 border-black'
+                          : 'bg-zinc-100 text-zinc-600 hover:text-black border border-zinc-200'
                       }`}
                     >
                       {primedineTabs[tabKey].title}
@@ -301,13 +226,11 @@ const Projects = () => {
                 </div>
 
                 {/* Active Tab Bullet List */}
-                <div className="min-h-[150px]">
-                  <ul className="space-y-3 text-zinc-300 text-xs leading-relaxed font-sans">
+                <div className="min-h-[160px]">
+                  <ul className="space-y-3.5 text-zinc-700 text-sm leading-relaxed font-medium">
                     {primedineTabs[activePrimeDineTab].bullets.map((bullet, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
-                          {`>`}
-                        </span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] mt-2 flex-shrink-0" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -317,28 +240,28 @@ const Projects = () => {
             </div>
 
             {/* Actions / Buttons */}
-            <div className="flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-6 mt-6">
+            <div className="flex flex-wrap items-center gap-3.5 border-t border-zinc-100 pt-6 mt-6">
               <a
                 href={projectsList.primedine.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-transparent hover:bg-white text-zinc-300 hover:text-black border border-zinc-700 hover:border-white transition-all duration-300"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider bg-white hover:bg-black text-black hover:text-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all duration-350"
               >
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
                 </svg>
-                GIT_CODE
+                GitHub Code
               </a>
               <a
                 href={projectsList.primedine.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-[#ff2a2a] hover:bg-white text-white hover:text-black border border-[#ff2a2a] hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,42,42,0.25)]"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider bg-[#ff2a2a] hover:bg-black text-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all duration-350"
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                LIVE_SYS
+                Live Demo
               </a>
             </div>
           </div>
