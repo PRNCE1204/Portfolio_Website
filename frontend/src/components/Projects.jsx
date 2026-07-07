@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import primedineMockup from '../assets/FoodZone.png';
 import voiceaiMockup from '../assets/logo.png';
 
 const Projects = () => {
-  const [selectedProjectId, setSelectedProjectId] = useState('voiceai');
   const [activePrimeDineTab, setActivePrimeDineTab] = useState('customer');
 
   const primedineTabs = {
@@ -62,7 +61,7 @@ const Projects = () => {
       title: "PrimeDine Platform",
       codename: "REST_SYS_v2.4",
       subtitle: "Restaurant Ordering & Table Management System",
-      duration: "COMPLETED",
+      duration: "2024",
       status: "ONLINE",
       techStack: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Socket.io"],
       mockup: primedineMockup,
@@ -70,8 +69,6 @@ const Projects = () => {
       live: "https://prime-dine.vercel.app/"
     }
   };
-
-  const currentProject = projectsList[selectedProjectId];
 
   return (
     <section 
@@ -88,7 +85,7 @@ const Projects = () => {
         }
         @keyframes scanline-anim {
           0% { transform: translateY(-100%); }
-          100% { transform: translateY(280px); }
+          100% { transform: translateY(220px); }
         }
         .scan-line {
           animation: scanline-anim 3.5s linear infinite;
@@ -103,7 +100,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Robotic Section Header */}
-        <div data-aos="fade-up" className="flex flex-col items-center mb-24">
+        <div data-aos="fade-up" className="flex flex-col items-center mb-20">
           <div className="font-mono text-xs text-[#ff2a2a] tracking-[0.25em] uppercase mb-3 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#ff2a2a] animate-pulse" />
             SYS.STATUS // ACTIVE_PORTFOLIO_DB
@@ -118,213 +115,232 @@ const Projects = () => {
           <div className="w-24 h-[2px] bg-gradient-to-r from-[#ff2a2a] to-transparent mt-4" />
         </div>
 
-        {/* Dashboard Layout */}
-        <div data-aos="fade-up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+        {/* Side-by-Side Multi-Console Grid */}
+        <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full">
           
-          {/* Left Panel: Module Selectors */}
-          <div className="lg:col-span-4 flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 w-full snap-x scrollbar-thin">
-            {Object.values(projectsList).map((proj, idx) => {
-              const isActive = selectedProjectId === proj.id;
-              return (
-                <button
-                  key={proj.id}
-                  onClick={() => setSelectedProjectId(proj.id)}
-                  className={`w-full min-w-[280px] snap-center text-left p-6 rounded-2xl border transition-all duration-300 relative overflow-hidden ${
-                    isActive
-                      ? 'bg-zinc-900/90 text-white border-[#ff2a2a] shadow-[0_0_20px_rgba(255,42,42,0.15)]'
-                      : 'bg-zinc-950/40 text-zinc-400 border-zinc-800/80 hover:border-zinc-700 hover:text-white'
-                  }`}
-                >
-                  {/* Cybertech Corner Brackets for active buttons */}
-                  {isActive && (
-                    <>
-                      <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#ff2a2a]" />
-                      <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#ff2a2a]" />
-                      <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#ff2a2a]" />
-                      <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#ff2a2a]" />
-                    </>
-                  )}
+          {/* Card 1: Voice AI Console */}
+          <div className="w-full bg-[#0a0a0f]/95 border-2 border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col justify-between hover:border-[#ff2a2a]/60 hover:shadow-[0_0_30px_rgba(255,42,42,0.15)] transition-all duration-500">
+            {/* HUD Panel Corners */}
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#ff2a2a]" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#ff2a2a]" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff2a2a]" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#ff2a2a]" />
 
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="font-mono text-[10px] tracking-widest text-zinc-500">
-                      // MOD_0{idx + 1}
-                    </span>
-                    <span className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded border ${
-                      isActive 
-                        ? 'border-[#ff2a2a]/30 text-[#ff2a2a] bg-[#ff2a2a]/5' 
-                        : 'border-zinc-800 text-zinc-500'
-                    }`}>
-                      {proj.duration}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-heading font-black tracking-wide">
-                    {proj.title}
+            <div>
+              {/* Top Screen Bar */}
+              <div className="flex justify-between items-center border-b border-zinc-800/80 pb-4 mb-6 font-mono text-[10px] text-zinc-500">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] animate-pulse" />
+                  <span>SYS_DISP: MOD_01</span>
+                </div>
+                <div>ID: {projectsList.voiceai.codename}</div>
+              </div>
+
+              {/* Mockup Frame with scanning laser */}
+              <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-zinc-800/80 bg-[#060609] flex items-center justify-center p-4 group mb-6">
+                {/* Corner Crosshairs */}
+                <div className="absolute top-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute bottom-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute bottom-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                
+                {/* Laser Scanner */}
+                <div className="absolute inset-x-0 h-[2px] bg-[#ff2a2a]/60 shadow-[0_0_10px_#ff2a2a] scan-line pointer-events-none z-10" />
+
+                <img 
+                  src={projectsList.voiceai.mockup} 
+                  alt={projectsList.voiceai.title} 
+                  className="select-none transition-all duration-500 max-h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,42,42,0.1)] group-hover:scale-105 max-w-[45%]"
+                />
+              </div>
+
+              {/* Info Header */}
+              <div className="mb-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl md:text-2xl font-heading font-black text-white leading-none">
+                    {projectsList.voiceai.title}
                   </h3>
-                  
-                  <p className="font-mono text-[10px] text-zinc-500 mt-2">
-                    ID: {proj.codename}
-                  </p>
+                  <span className="font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-[#ff2a2a]/30 text-[#ff2a2a] bg-[#ff2a2a]/5">
+                    {projectsList.voiceai.duration}
+                  </span>
+                </div>
+                <p className="font-mono text-[10px] text-zinc-500 tracking-wider mb-4">
+                  {projectsList.voiceai.subtitle}
+                </p>
 
-                  <div className="flex items-center gap-2 mt-4 font-mono text-[9px] text-[#ff2a2a]">
-                    <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#ff2a2a] animate-ping' : 'bg-zinc-700'}`} />
-                    STATUS: {proj.status}
-                  </div>
-                </button>
-              );
-            })}
+                {/* Tech Badges */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {projectsList.voiceai.techStack.map((tech, idx) => (
+                    <span 
+                      key={idx} 
+                      className="px-2 py-0.5 rounded bg-[#ff2a2a]/5 border border-[#ff2a2a]/10 text-zinc-300 font-mono text-[9px] uppercase tracking-wider"
+                    >
+                      [{tech}]
+                    </span>
+                  ))}
+                </div>
+
+                {/* Project Specs */}
+                <ul className="space-y-3 text-zinc-300 text-xs leading-relaxed font-sans">
+                  {projectsList.voiceai.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
+                        {`>`}
+                      </span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Actions / Buttons */}
+            <div className="flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-6 mt-6">
+              <a
+                href={projectsList.voiceai.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-transparent hover:bg-white text-zinc-300 hover:text-black border border-zinc-700 hover:border-white transition-all duration-300"
+              >
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                </svg>
+                GIT_CODE
+              </a>
+              <a
+                href={projectsList.voiceai.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-[#ff2a2a] hover:bg-white text-white hover:text-black border border-[#ff2a2a] hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,42,42,0.25)]"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                LIVE_SYS
+              </a>
+            </div>
           </div>
 
-          {/* Right Panel: Sci-Fi Console Screen */}
-          <div className="lg:col-span-8 w-full">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedProjectId}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="w-full bg-[#0a0a0f]/95 border-2 border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.5)] relative overflow-hidden"
-              >
-                {/* HUD Panel Corners */}
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#ff2a2a]" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#ff2a2a]" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff2a2a]" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#ff2a2a]" />
+          {/* Card 2: PrimeDine Console */}
+          <div className="w-full bg-[#0a0a0f]/95 border-2 border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col justify-between hover:border-[#ff2a2a]/60 hover:shadow-[0_0_30px_rgba(255,42,42,0.15)] transition-all duration-500">
+            {/* HUD Panel Corners */}
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#ff2a2a]" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#ff2a2a]" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff2a2a]" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#ff2a2a]" />
 
-                {/* Top Screen Bar */}
-                <div className="flex justify-between items-center border-b border-zinc-800/80 pb-4 mb-6 font-mono text-xs text-zinc-500">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] animate-pulse" />
-                    <span>SYS_DISP: ONLINE</span>
-                  </div>
-                  <div>HEX // {selectedProjectId.toUpperCase()}</div>
+            <div>
+              {/* Top Screen Bar */}
+              <div className="flex justify-between items-center border-b border-zinc-800/80 pb-4 mb-6 font-mono text-[10px] text-zinc-500">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff2a2a] animate-pulse" />
+                  <span>SYS_DISP: MOD_02</span>
+                </div>
+                <div>ID: {projectsList.primedine.codename}</div>
+              </div>
+
+              {/* Mockup Frame with scanning laser */}
+              <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-zinc-800/80 bg-[#060609] flex items-center justify-center p-4 group mb-6">
+                {/* Corner Crosshairs */}
+                <div className="absolute top-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute top-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute bottom-2 left-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                <div className="absolute bottom-2 right-2 text-[9px] font-mono text-zinc-700 pointer-events-none">[+]</div>
+                
+                {/* Laser Scanner */}
+                <div className="absolute inset-x-0 h-[2px] bg-[#ff2a2a]/60 shadow-[0_0_10px_#ff2a2a] scan-line pointer-events-none z-10" />
+
+                <img 
+                  src={projectsList.primedine.mockup} 
+                  alt={projectsList.primedine.title} 
+                  className="select-none transition-all duration-500 max-h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,42,42,0.1)] group-hover:scale-105 max-w-[60%]"
+                />
+              </div>
+
+              {/* Info Header */}
+              <div className="mb-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl md:text-2xl font-heading font-black text-white leading-none">
+                    {projectsList.primedine.title}
+                  </h3>
+                  <span className="font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-zinc-800 text-zinc-500">
+                    {projectsList.primedine.duration}
+                  </span>
+                </div>
+                <p className="font-mono text-[10px] text-zinc-500 tracking-wider mb-4">
+                  {projectsList.primedine.subtitle}
+                </p>
+
+                {/* Tech Badges */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {projectsList.primedine.techStack.map((tech, idx) => (
+                    <span 
+                      key={idx} 
+                      className="px-2 py-0.5 rounded bg-[#ff2a2a]/5 border border-[#ff2a2a]/10 text-zinc-300 font-mono text-[9px] uppercase tracking-wider"
+                    >
+                      [{tech}]
+                    </span>
+                  ))}
                 </div>
 
-                <div className="flex flex-col gap-8">
-                  
-                  {/* Mockup Frame with scanning laser */}
-                  <div className="relative w-full h-[280px] rounded-xl overflow-hidden border border-zinc-800 bg-[#060609] flex items-center justify-center p-6 group">
-                    {/* Corner Crosshairs */}
-                    <div className="absolute top-2 left-2 text-[10px] font-mono text-zinc-600 pointer-events-none">[+]</div>
-                    <div className="absolute top-2 right-2 text-[10px] font-mono text-zinc-600 pointer-events-none">[+]</div>
-                    <div className="absolute bottom-2 left-2 text-[10px] font-mono text-zinc-600 pointer-events-none">[+]</div>
-                    <div className="absolute bottom-2 right-2 text-[10px] font-mono text-zinc-600 pointer-events-none">[+]</div>
-                    
-                    {/* Laser Scanner */}
-                    <div className="absolute inset-x-0 h-[2px] bg-[#ff2a2a]/60 shadow-[0_0_10px_#ff2a2a] scan-line pointer-events-none z-10" />
-
-                    <img 
-                      src={currentProject.mockup} 
-                      alt={currentProject.title} 
-                      className={`select-none transition-all duration-500 max-h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,42,42,0.1)] group-hover:scale-105 ${
-                        currentProject.id === 'voiceai' ? 'max-w-[50%]' : 'max-w-[65%]'
+                {/* Interactive Sub-System view selector switcher */}
+                <div className="flex flex-wrap gap-1.5 border-b border-zinc-800/80 pb-3 mb-4">
+                  {Object.keys(primedineTabs).map((tabKey) => (
+                    <button
+                      key={tabKey}
+                      onClick={() => setActivePrimeDineTab(tabKey)}
+                      className={`px-2.5 py-1 rounded font-mono text-[9px] uppercase tracking-widest transition-all duration-300 ${
+                        activePrimeDineTab === tabKey
+                          ? 'bg-[#ff2a2a] text-white shadow-[0_0_8px_rgba(255,42,42,0.3)] border border-[#ff2a2a]'
+                          : 'bg-zinc-950 text-zinc-500 hover:text-zinc-300 border border-zinc-900'
                       }`}
-                    />
-                  </div>
-
-                  {/* Info Header */}
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-heading font-black text-white leading-none mb-1">
-                      {currentProject.title}
-                    </h3>
-                    <p className="font-mono text-xs text-[#ff2a2a] tracking-wider mb-5">
-                      {currentProject.subtitle}
-                    </p>
-
-                    {/* Tech Badges styled like cybernetic code tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {currentProject.techStack.map((tech, idx) => (
-                        <span 
-                          key={idx} 
-                          className="px-2.5 py-1 rounded bg-[#ff2a2a]/5 border border-[#ff2a2a]/20 text-zinc-300 font-mono text-[9px] uppercase tracking-wider"
-                        >
-                          [{tech}]
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Project Specific Details */}
-                    {currentProject.id === 'voiceai' ? (
-                      <ul className="space-y-3.5 text-zinc-300 text-xs leading-relaxed font-sans">
-                        {currentProject.bullets.map((bullet, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5">
-                            <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
-                              {`>`}
-                            </span>
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <div>
-                        {/* Futuristic Tabs switcher */}
-                        <div className="flex flex-wrap gap-2 border-b border-zinc-800/80 pb-3 mb-5">
-                          {Object.keys(primedineTabs).map((tabKey) => (
-                            <button
-                              key={tabKey}
-                              onClick={() => setActivePrimeDineTab(tabKey)}
-                              className={`px-3 py-1.5 rounded font-mono text-[10px] uppercase tracking-widest transition-all duration-300 ${
-                                activePrimeDineTab === tabKey
-                                  ? 'bg-[#ff2a2a] text-white shadow-[0_0_10px_rgba(255,42,42,0.4)] border border-[#ff2a2a]'
-                                  : 'bg-zinc-950 text-zinc-500 hover:text-zinc-300 border border-zinc-900'
-                              }`}
-                            >
-                              {primedineTabs[tabKey].title}
-                            </button>
-                          ))}
-                        </div>
-
-                        {/* Active Tab Bullet List */}
-                        <motion.ul 
-                          key={activePrimeDineTab}
-                          initial={{ opacity: 0, x: 5 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="space-y-3.5 text-zinc-300 text-xs leading-relaxed font-sans min-h-[160px]"
-                        >
-                          {primedineTabs[activePrimeDineTab].bullets.map((bullet, idx) => (
-                            <li key={idx} className="flex items-start gap-2.5">
-                              <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
-                                {`>`}
-                              </span>
-                              <span>{bullet}</span>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Actions / Buttons */}
-                  <div className="flex flex-wrap items-center gap-4 border-t border-zinc-800/80 pt-6">
-                    <a
-                      href={currentProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-transparent hover:bg-white text-zinc-300 hover:text-black border border-zinc-700 hover:border-white transition-all duration-300"
                     >
-                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-                      </svg>
-                      // GIT_CODE
-                    </a>
-                    <a
-                      href={currentProject.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-[#ff2a2a] hover:bg-white text-white hover:text-black border border-[#ff2a2a] hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,42,42,0.25)]"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      // LIVE_SYS
-                    </a>
-                  </div>
-
+                      {primedineTabs[tabKey].title}
+                    </button>
+                  ))}
                 </div>
-              </motion.div>
-            </AnimatePresence>
+
+                {/* Active Tab Bullet List */}
+                <div className="min-h-[150px]">
+                  <ul className="space-y-3 text-zinc-300 text-xs leading-relaxed font-sans">
+                    {primedineTabs[activePrimeDineTab].bullets.map((bullet, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className="font-mono text-[#ff2a2a] mt-0.5 flex-shrink-0 text-[10px] font-bold">
+                          {`>`}
+                        </span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Actions / Buttons */}
+            <div className="flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-6 mt-6">
+              <a
+                href={projectsList.primedine.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-transparent hover:bg-white text-zinc-300 hover:text-black border border-zinc-700 hover:border-white transition-all duration-300"
+              >
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                </svg>
+                GIT_CODE
+              </a>
+              <a
+                href={projectsList.primedine.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-w-[120px] text-center justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-mono text-[10px] uppercase tracking-wider bg-[#ff2a2a] hover:bg-white text-white hover:text-black border border-[#ff2a2a] hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(255,42,42,0.25)]"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                LIVE_SYS
+              </a>
+            </div>
           </div>
 
         </div>
