@@ -91,7 +91,7 @@ const Projects = () => {
         </div>
 
         {/* Side-by-Side Grid Layout */}
-        <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full">
+        <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch w-full">
           
           {/* Card 1: Voice AI */}
           <div className="bg-white border-4 border-black rounded-[2rem] p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300">
