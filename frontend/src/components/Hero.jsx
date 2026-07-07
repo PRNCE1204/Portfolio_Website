@@ -13,7 +13,7 @@ const Hero = () => {
       />
 
       {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-4 pt-36 md:pt-48 md:px-8 flex flex-col items-start justify-start text-left w-full">
+      <div className="absolute inset-0 z-20 px-6 pb-16 pt-24 md:pt-48 md:pb-0 md:px-8 flex flex-col items-start justify-end md:justify-start text-left w-full">
 
         {/* Left Side: Name and Roles */}
         <div className="flex flex-col items-start text-left max-w-2xl w-full">
